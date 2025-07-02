@@ -1,9 +1,12 @@
  name: Update and Obfuscate Worker 
  
 on: 
-  schedule: 
-    - cron: "0 17 * * *"  # UTC时间凌晨1点 (中国时间凌晨1点对应 UTC时间17点) 
-  workflow_dispatch:      # 允许手动触发 
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 17 * * *" # 每天凌晨1点运行
+  workflow_dispatch:
  
 permissions: 
   contents: write 
